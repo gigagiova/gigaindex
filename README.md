@@ -68,7 +68,7 @@ To achieve this goal, the HybridIndex stores two indices:
 - A faiss index for semantic search with cosine similarity
 - A modified **BM25O+** index that measure keyword similarity
 
-The **BM25O+** index is a modified version of BM25+ that uses $\dfrac{corpus \ size}{frequency^2}$ to calculate the **IDF**. This formula has the effect of putting an enphasis on rare keywords while the semantic search takes care of the rest.
+The **BM25O+** index is a modified version of BM25+ that uses $\dfrac{corpus \ size}{frequency^2}$ to calculate the **IDF**. This formula has the effect of putting an emphasis on rare keywords while the semantic search takes care of the rest.
 
 Both indexes are queried and each result is then combined using $\alpha \cdot cosine \ score + (1 - \alpha ) \cdot BM25O+ \ score$.
 
